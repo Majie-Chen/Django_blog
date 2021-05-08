@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的博客</title>
+</head>
+<body>
+    <div>
+        <h1>个人博客网站</h1>
+    </div>
+    <hr>
+    <!-- 方式1：<p>一共有{{ blogs|length }}篇博客</p> -->
+    <h3>文章列表：</h3>
+    {% for blog in blogs %}
+        <a href="{% url 'blog_detail' blog.pk %}">
+            <h3>{{ blog.title }}</h3>
+        </a>
+        <p>{{ blog.content|truncatewords:5 }}</p>
+        {% empty %}
+        <p>-- 暂无博客，敬请期待 --</p>
+    {% endfor %}
+    <p>一共有{{ blogs_count}}篇博客</p>
+</body>
+</html>
