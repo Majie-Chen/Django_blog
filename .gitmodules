@@ -1,0 +1,3 @@
+[submodule "STGCN_IJCAI-18"]
+	path = STGCN_IJCAI-18
+	url = https://github.com/VeritasYin/STGCN_IJCAI-18.git
